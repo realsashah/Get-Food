@@ -3,29 +3,30 @@ import Header from './HeaderComponent';
 import Home from './HomeComponent'
 import About from './Aboutcomponents';
 import Footer from './Footercomponents';
-import dishes from '../assets/json files/dishes';
-import leaders from '../assets/json files/leaders';
-import promos from '../assets/json files/promotions';
+import { actions } from 'react-redux-form'; 
 import {Switch,Route,Redirect, withRouter } from 'react-router-dom';
+import {connect} from 'react-redux';
+
 
 
 class Main extends Component{
     constructor(props){
         super(props);
     }
-
-   
     
     render(){
       
         const HomePage=()=>{
             return(
-              <Home dish={dishes.filter(dish=>dish.featured)[0]} 
-                leader={leaders.filter(leader=>leader.featured)[0]}
-                promotion={promos.filter(promo=>promo.featured)[0]}
-                />
+              <Home />
             );
-          }
+          };
+        
+        const AboutPage=()=>{
+          return(
+            <About />
+          );
+        };
 
           
         return(
@@ -34,10 +35,10 @@ class Main extends Component{
               <div>
                 <Switch>
                     <Route exact path="/">
-                        <Redirect to="/home" />
+                        <Redirect to="/about" />
                     </Route>
                     <Route path='/home' component={HomePage}/>
-                    <Route path='/about' component={<About/>} />
+                    <Route path='/about' component={AboutPage} />
                 </Switch>
             </div>
               <Footer/>  
