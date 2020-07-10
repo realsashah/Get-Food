@@ -1,13 +1,9 @@
 import React,{Component} from 'react';
 import {Media} from 'reactstrap';
 import {baseUrl} from '../shared/baseUrl';
-
-const ahsanshah={
-        
-        name:'Ahsan Shah',
-        image: '../assets/img/ahsanshah.jpg',
-        description:'Our CEO, Our Proud, Ahsan Shah'
-};
+import ahsanshah from '../assets/img/ahsanshah.jpg';
+import food from '../assets/img/pakistaniFood.jpg';
+import pizza from '../assets/img/pizza.jpg';
 
 
 
@@ -22,8 +18,7 @@ function Home(props){
             </div>
             <div className="col col-sm order-sm-first col-md">
                 <div className="media">
-                    <img className="d-flex mr-3 img-thumbnail align-self-center" src={ahsanshah.image} alt="uthappizza" />
-                    {/* <Media object src={ahsanshah.image} alt={ahsanshah.description} /> */}
+                    <img className="d-flex mr-3 img-thumbnail align-self-center" src={pizza} alt="uthappizza" />
                     <div className="media-body">
                         <h2 className='mt-0'>Extra Large Pizza
                             <span className="badge badge-danger">HOT</span>
@@ -50,7 +45,7 @@ function Home(props){
                         <p className="d-none d-sm-block">Featuring mouthwatering combinations with a choice of five different salads, six enticing appetizers, six main entrees and five choicest desserts. Free flowing bubbly and soft drinks. All for just $19.99 per person </p>
 
                     </div>
-                    <img className="img-fluid img-thumbnail align-self-center" src="../assets/img/pakistaniFood.jpg" alt="Buffet" />
+                    <img className="img-fluid img-thumbnail align-self-center" src={food} alt="Buffet" />
                 </div>
             </div>
             </div>
@@ -62,7 +57,7 @@ function Home(props){
             </div>
             <div className="col col-sm order-sm-first col-md">
                 <div className="media">
-                    <img className="d-flex mr-3 img-thumbnail align-self-center" src="../assets/img/ahsanshah.jpg" alt="Ahsan Shah" width={150} height={150} />
+                    <img className="d-flex mr-3 img-thumbnail align-self-center" src={ahsanshah} alt="Ahsan Shah" width={150} height={150} />
                     <div className="media-body">
                         <h2 className='mt-0'>Ahsan Shah</h2>
                         <h4>Executive Chef</h4>
