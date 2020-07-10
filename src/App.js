@@ -2,16 +2,20 @@ import React from 'react';
 import '../node_modules/bootstrap/dist/css/bootstrap.css';
 import '../node_modules/font-awesome/css/font-awesome.min.css'; 
 import './App.css';
-import Header from './components/HeaderComponent';
-import Footer from './components/Footercomponents';
-import About from './components/Aboutcomponents';
+import Main from './components/MainComponent';
+import {BrowserRouter} from 'react-router-dom';
+import {Provider} from 'react-redux'
+
+
 function App() {
   return (
-    <>
-    <Header/>
-    <About/>
-    <Footer />
-    </>
+    // <Provider>
+      <BrowserRouter>
+        <div>
+          <Main/>
+        </div>
+      </BrowserRouter>
+    // </Provider>
   );
 }
 
