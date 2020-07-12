@@ -1,6 +1,4 @@
-import React,{Component} from 'react';
-import {Media} from 'reactstrap';
-import {baseUrl} from '../shared/baseUrl';
+import React from 'react';
 import {DISHES} from '../shared/dishes';
 import {LEADERS} from '../shared/leaders';
 import {PROMOTIONS} from '../shared/promotions';

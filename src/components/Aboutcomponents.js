@@ -1,7 +1,46 @@
 import React from 'react';
-import { Breadcrumb, BreadcrumbItem, Card, CardBody, CardHeader, Media } from 'reactstrap';
+import { Breadcrumb, BreadcrumbItem, Card, CardBody, CardHeader, Media,Fade} from 'reactstrap';
+import leaders from '../shared/leaders';
+
+
+function RenderLeader({leader}){
+    if(leader!=null){
+         return(
+
+          <div key={leader.id} className="col-12 mt-5">
+           <Fade in>
+             <Media tag='li'>
+                 <Media object src={leader.image} alt={leader.name} className="mr-5" heigth={105} width={105}/>
+                 <Media body>
+                 <Media heading>
+                     {leader.name}
+                 </Media>
+                     {leader.designation}
+                     <br/><br/>
+                     {leader.description}
+                 </Media>
+             </Media>
+             </Fade>
+         </div> 
+    );
+    }
+    else
+    {
+        return null;
+    }
+}
+
 function About(props)
 {
+    const lead = leaders.map((leader) => {
+        console.log('leaders');
+        return (
+            // <Stagger in>
+                <RenderLeader key={leader.id} leader={leader} />
+            // </Stagger>
+        );
+    });
+
     return(
         <div className="container">
             <div className="row">
@@ -50,7 +89,19 @@ function About(props)
                     </Card>
                 </div>
             </div>
+            <div className="row row-content">
+                <div className="col-12">
+                    <h2>Corporate Leadership</h2>
+                </div>
+                <div className="col-12">
+                    <Media list className="mt-5">
+                        {lead}
+                    </Media>
+                </div>
+            </div>
         </div>
+
+        
     );
 }
 export default About;
