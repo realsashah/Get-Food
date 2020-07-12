@@ -1,5 +1,5 @@
 import React from 'react';
-import {DISHES} from '../shared/dishes';
+import DISHES from '../shared/dishes';
 import {LEADERS} from '../shared/leaders';
 import {PROMOTIONS} from '../shared/promotions';
 

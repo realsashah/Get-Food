@@ -1,7 +1,7 @@
-export const DISHES = [{
+const DISHES = [{
         id: 0,
         name: 'Pizza',
-        image: 'assets/images/pizza.jpg',
+        image: '/assets/images/pizza.jpg',
         category: 'mains',
         label: 'Hot',
         price: '4.99',

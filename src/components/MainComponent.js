@@ -2,8 +2,10 @@ import React, {Component} from 'react';
 import Header from './HeaderComponent';
 import Home from './HomeComponent'
 import About from './Aboutcomponents';
+import Menu from './MenuComponent';
 import Footer from './Footercomponents';
-import { actions } from 'react-redux-form'; 
+import DishContextProvider from '../contexts/DishContext';
+import {actions } from 'react-redux-form'; 
 import {Switch,Route,Redirect, withRouter } from 'react-router-dom';
 import {connect} from 'react-redux';
 
@@ -28,6 +30,12 @@ class Main extends Component{
           );
         };
 
+        const MenuPage=()=>{
+          return(
+            <Menu />
+          )
+        }
+
           
         return(
             <>
@@ -39,6 +47,9 @@ class Main extends Component{
                     </Route>
                     <Route path='/home' component={HomePage}/>
                     <Route path='/about' component={AboutPage} />
+                    <DishContextProvider>
+                      <Route path='/menu' component={MenuPage} />
+                    </DishContextProvider>                    
                 </Switch>
             </div>
               <Footer/>  
