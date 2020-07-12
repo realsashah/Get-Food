@@ -17,7 +17,7 @@ export const LEADERS = [{
 },
 
 {
-    id: 0,
+    id: 3,
     name: 'Muhammad Kamran',
     image: 'assets/images/kamran.jpg',
     designation: 'Chief Operations',
@@ -27,4 +27,4 @@ export const LEADERS = [{
 },
 ];
 
-export default LEADERS
+// export default LEADERS;

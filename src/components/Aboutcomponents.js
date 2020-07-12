@@ -1,6 +1,6 @@
 import React from 'react';
 import { Breadcrumb, BreadcrumbItem, Card, CardBody, CardHeader, Media,Fade} from 'reactstrap';
-import leaders from '../shared/leaders';
+import {LEADERS} from '../shared/leaders';
 
 
 function RenderLeader({leader}){
@@ -32,7 +32,7 @@ function RenderLeader({leader}){
 
 function About(props)
 {
-    const lead = leaders.map((leader) => {
+    const lead = LEADERS.map((leader) => {
         console.log('leaders');
         return (
             // <Stagger in>
