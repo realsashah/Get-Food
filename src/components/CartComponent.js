@@ -2,27 +2,38 @@ import React,{useContext} from 'react'
 import {Media,Breadcrumb,BreadcrumbItem,Button} from 'reactstrap';
 import {CartContext} from '../contexts/CartContext';
 import {Link} from 'react-router-dom';
+import {removeFromCart} from '../reducers/ActionTypes'
 
 
-function RenderCartItem({dish}){
-    return(
-        <Media tag='li'>
-            <Media object src={dish.image} alt={dish.name} className="mr-5" heigth={105} width={105}/>
-            <Media body>
-            <Media heading>
-                {dish.name}
-            </Media>
-                {"Qty:"+dish.quantity}
-                <br/><br/>
-            </Media>
-            <Button className='fa fa-minus'></Button>
-    </Media>
-    
-    );
-}
+
 
 const Cart = (props) => {
-    const {cartItems}=useContext(CartContext);
+
+    const RenderCartItem=({dish})=>{
+        return(
+            <Media tag='li'>
+                <Media object src={dish.image} alt={dish.name} className="mr-5" heigth={105} width={105}/>
+                <Media body>
+                <Media heading>
+                    {dish.name}
+                </Media>
+                    {"Qty:"+dish.quantity}
+                    <br/><br/>
+                </Media>
+                <Button className='fa fa-minus' onClickCapture={()=>handleRemove(dish.id)}></Button>
+        </Media>
+        
+        );
+    }
+
+    const {cartItems,dispatch}=useContext(CartContext);
+    const handleRemove=(dishId)=>{
+        dispatch({
+            type:removeFromCart,
+            id:dishId
+        });
+        alert('Item Removed');
+    }
 
     
     const data=cartItems.map((dish)=>{
@@ -32,6 +43,8 @@ const Cart = (props) => {
             </div>
         )
     });
+
+    
 
     return ( 
     <>
@@ -53,6 +66,10 @@ const Cart = (props) => {
                         <Media list className="mt-5">
                             {data}
                         </Media>
+                    </div>
+
+                    <div>
+                        <Button outline onClick={()=>{cartItems.map(dish=>handleRemove(dish.id))}}>Check Out</Button>
                     </div>
                 </div>
     </> 
