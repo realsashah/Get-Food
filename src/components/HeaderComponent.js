@@ -1,6 +1,6 @@
 import React,{Component} from 'react';
 import { Navbar,NavbarBrand,NavItem,NavbarToggler,Collapse,Nav,Jumbotron,Button}from 'reactstrap';
-import {NavLink} from 'react-router-dom';
+import {NavLink,Link} from 'react-router-dom';
 
 class Header extends Component{
     constructor(props){
@@ -43,6 +43,11 @@ class Header extends Component{
                             </NavItem>
                         </Nav>
                         <Nav className="ml-auto" navbar>
+                            <NavItem>
+                                                 
+                                    <Link to='/cart' className='nav-link'><span className="fa fa-shopping-cart fa-lg"></span>Cart</Link>
+
+                            </NavItem>
                             <NavItem>
                                 <Button outline onClick={this.toggleModal}>
                                     <span className="fa fa-sign-in fa-lg"></span>

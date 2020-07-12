@@ -6,13 +6,11 @@ import {DishContext} from '../contexts/DishContext';
 function RenderMenuItem({dish,onClick}){
     return(
         <Card>
-            <Link to ={`/menu/${dish.id}`}>
+            
             <CardImg width='100%' src={dish.image} alt={dish.name} />
             <CardImgOverlay className="ml-5" >
                 <CardTitle>{dish.name}</CardTitle>
-            </CardImgOverlay>
-            </Link>
-        </Card>
+            </CardImgOverlay>        </Card>
     );
 }
 
