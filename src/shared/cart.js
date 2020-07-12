@@ -1,6 +1,7 @@
 const CART=[
     {
         id: 0,
+        quantity:4,
         name: 'Pizza',
         image: '/assets/images/pizza.jpg',
         category: 'mains',
@@ -11,6 +12,7 @@ const CART=[
     },
     {
         id: 1,
+        quantity:1,
         name: 'Zucchipakoda',
         image: '/assets/images/zucchipakoda.png',
         category: 'appetizer',
