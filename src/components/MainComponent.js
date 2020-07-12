@@ -5,9 +5,7 @@ import About from './Aboutcomponents';
 import Menu from './MenuComponent';
 import Footer from './Footercomponents';
 import DishContextProvider from '../contexts/DishContext';
-import {actions } from 'react-redux-form'; 
-import {Switch,Route,Redirect, withRouter } from 'react-router-dom';
-import {connect} from 'react-redux';
+import {Switch,Route,Redirect } from 'react-router-dom';
 
 
 

@@ -2,8 +2,6 @@ import React,{useContext} from 'react';
 import {Card, CardImg,CardImgOverlay,CardTitle,Breadcrumb,BreadcrumbItem} from 'reactstrap';
 import {Link} from 'react-router-dom';
 import {DishContext} from '../contexts/DishContext';
-import DishCont from "../contexts/DishContext";
-
 
 function RenderMenuItem({dish,onClick}){
     return(
