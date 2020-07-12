@@ -6,7 +6,7 @@ export const DishContext=createContext();
 const DishContextProvider = (props) => {
 
     
-    const [dishes, setDishes]=useState(dishList);
+    const [dishes]=useState(dishList);
     
     return ( 
         <DishContext.Provider value={{dishes}}>
