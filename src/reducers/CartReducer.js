@@ -1,6 +1,7 @@
 import {addIntoCart,removeFromCart} from './ActionTypes'
 
-export const CardReducer=(state,action)=>{
+
+export const CartReducer=(state,action)=>{
     switch(action.type){
         case addIntoCart:
             return [...state,{
