@@ -1,6 +1,6 @@
 import React from 'react'
-import {Card, CardImg,CardText,CardBody,
-    CardTitle,Breadcrumb, BreadcrumbItem} from 'reactstrap';
+import {Button,Card, CardImg,CardText,CardBody,
+    CardTitle,Breadcrumb, BreadcrumbItem,Input} from 'reactstrap';
 import {Link} from 'react-router-dom';
 
 
@@ -47,7 +47,14 @@ const DishDetail = (props) => {
                 <RenderDish dish={props.dish}/>
             </div>
             
-            <div className="col-12 col-md-5 m-1">                
+            <div className="col-12 col-md-5 m-1">    
+                <div className='row col-md-5 form-group'>
+
+                    <Button className='fa fa-minus col-3'></Button>
+                    <Input type='number' className='col-6'/>
+                    <Button className='fa fa-plus col-3'></Button>
+                </div>
+                <Button outline className='fa fa-shopping-cart fa-lg'>Add to Cart</Button>           
             </div>
         </div>
     </>
