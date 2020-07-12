@@ -6,7 +6,8 @@ import Menu from './MenuComponent';
 import Footer from './Footercomponents';
 import DishContextProvider from '../contexts/DishContext';
 import {Switch,Route,Redirect } from 'react-router-dom';
-
+import DishDetail from './DishDetailComponent';
+import dishes from '../shared/dishes';
 
 
 class Main extends Component{
@@ -34,6 +35,11 @@ class Main extends Component{
           )
         }
 
+        const DishWithId=({match})=>{
+          return (
+            <DishDetail dish={dishes.filter((dish)=>dish.id===parseInt(match.params.dishId,10))[0]} />
+        );
+        }
           
         return(
             <>
@@ -45,9 +51,11 @@ class Main extends Component{
                     </Route>
                     <Route path='/home' component={HomePage}/>
                     <Route path='/about' component={AboutPage} />
+                    <Route path="/menu/:dishId" component={DishWithId} />
                     <DishContextProvider>
                       <Route path='/menu' component={MenuPage} />
                     </DishContextProvider>                    
+                    
                 </Switch>
             </div>
               <Footer/>  

@@ -2,15 +2,21 @@ import React,{useContext} from 'react';
 import {Card, CardImg,CardImgOverlay,CardTitle,Breadcrumb,BreadcrumbItem} from 'reactstrap';
 import {Link} from 'react-router-dom';
 import {DishContext} from '../contexts/DishContext';
+import DishDetail from './DishDetailComponent';
+
+
+
 
 function RenderMenuItem({dish,onClick}){
     return(
         <Card>
-            
+            <Link to ={`/menu/${dish.id}`}>
             <CardImg width='100%' src={dish.image} alt={dish.name} />
             <CardImgOverlay className="ml-5" >
                 <CardTitle>{dish.name}</CardTitle>
-            </CardImgOverlay>        </Card>
+            </CardImgOverlay>        
+            </Link>
+            </Card>
     );
 }
 
@@ -25,6 +31,13 @@ const MenuComponent = () => {
             </div>
         )
     });
+
+    
+    // const DishDetailPage=()=>{
+    //     return(
+    //     <DishDetail dish={dishes.filter((dish)=>dish.id===parseInt())[0]} />
+    //     );
+    //   }
 
     return (
         <>
