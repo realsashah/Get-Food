@@ -47,7 +47,7 @@ const Cart = (props) => {
     
 
     return ( 
-    <>
+    <div className='container'>
     <div className='row'>
                     <Breadcrumb>
                         <BreadcrumbItem><Link to ='/home'>Home</Link></BreadcrumbItem>
@@ -72,7 +72,7 @@ const Cart = (props) => {
                         <Button outline onClick={()=>{cartItems.map(dish=>handleRemove(dish.id))}}>Check Out</Button>
                     </div>
                 </div>
-    </> 
+    </div> 
     );
 }
  

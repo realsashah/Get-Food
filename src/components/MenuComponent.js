@@ -40,7 +40,7 @@ const MenuComponent = () => {
     //   }
 
     return (
-        <>
+        <div className='container'>
                 <div className='row'>
                     <Breadcrumb>
                         <BreadcrumbItem><Link to ='/home'>Home</Link></BreadcrumbItem>
@@ -54,7 +54,7 @@ const MenuComponent = () => {
                 <div className="row">
                    {menu}
                 </div>
-                </>
+                </div>
      
       );
 }

@@ -45,7 +45,7 @@ const DishDetail = (props) => {
     }
 
     return (  
-        <>
+        <div className='container'>
         <div className='row'>
            <Breadcrumb>
                 <BreadcrumbItem><Link to ='/menu'>Menu</Link></BreadcrumbItem>
@@ -76,7 +76,7 @@ const DishDetail = (props) => {
                 </form>
             </div>
         </div>
-    </>
+    </div>
 
     );
 }
