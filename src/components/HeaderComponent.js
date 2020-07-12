@@ -30,16 +30,16 @@ class Header extends Component{
                         <Collapse isOpen={this.state.isNavOpen} navbar>
                         <Nav navbar>
                             <NavItem>
-                                <NavLink className='nav-link' to="/home"><span className='fa fa-home fa-lg'></span>Home</NavLink>
+                                <NavLink className='nav-link' to="/home" styles={{margin:'1px'}}><span className='fa fa-home fa-lg' styles={{margin:'1px'}}></span>Home</NavLink>
                             </NavItem>
                             <NavItem>
-                                <NavLink className='nav-link' to="/about"><span className='fa fa-info fa-lg'></span>About Us</NavLink>
+                                <NavLink className='nav-link' to="/about" styles={{margin:'1px'}}><span className='fa fa-info fa-lg' styles={{margin:'1px'}}></span>About Us</NavLink>
                             </NavItem>
                             <NavItem>
-                                <NavLink className='nav-link' to="/menu"><span className='fa fa-list fa-lg'></span>Menu</NavLink>
+                                <NavLink className='nav-link' to="/menu" styles={{margin:'1px'}}><span className='fa fa-list fa-lg' styles={{margin:'1px'}}></span>Menu</NavLink>
                             </NavItem>
                             <NavItem>
-                                <NavLink className='nav-link' to="/cart"><span className='fa fa-shopping-cart fa-lg'></span>Cart</NavLink>
+                                <NavLink className='nav-link' to="/cart" styles={{margin:'1px'}}><span className='fa fa-shopping-cart fa-lg' styles={{margin:'1px'}}></span>Cart</NavLink>
                             </NavItem>
                         </Nav>
                         <Nav className="ml-auto" navbar>
