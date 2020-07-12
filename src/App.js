@@ -4,7 +4,7 @@ import '../node_modules/font-awesome/css/font-awesome.min.css';
 import './App.css';
 import Main from './components/MainComponent';
 import {BrowserRouter} from 'react-router-dom';
-import {Provider} from 'react-redux'
+// import {Provider} from 'react-redux'
 import DishContextProvider from './contexts/DishContext';
 // import {ConfigureStore} from './redux/configureStore'
 
