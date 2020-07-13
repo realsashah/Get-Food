@@ -6,6 +6,7 @@ import Menu from './MenuComponent';
 import Cart from './CartComponent';
 import Footer from './Footercomponents';
 import SignUp from './SignUpComponent';
+import AuthContextProvider from '../contexts/AuthContext'
 import DishContextProvider from '../contexts/DishContext';
 import CartContextProvider from '../contexts/CartContext';
 import {Switch,Route,Redirect } from 'react-router-dom';
@@ -20,6 +21,11 @@ class Main extends Component{
     
     render(){
       
+
+       
+
+
+
         const HomePage=()=>{
             return(
               <Home />
@@ -58,12 +64,14 @@ class Main extends Component{
 
         const SignUpPage=()=>{
           return(
-            <SignUp />
+            <AuthContextProvider>
+             <SignUp />
+            </AuthContextProvider>
           )
         }
         return(
             <>
-              <Header/>
+              <Header />
               <div>
                 <Switch>
                     <Route exact path="/">

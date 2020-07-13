@@ -1,7 +1,8 @@
-import React,{useState} from 'react'
+import React,{useState,useContext} from 'react'
 import {Form,FormGroup,Label,Input,Button,Breadcrumb,BreadcrumbItem} from 'reactstrap'
 import {Link} from 'react-router-dom';
-
+import {AuthContext} from '../contexts/AuthContext';
+import {signUp} from '../reducers/ActionTypes'
 
 const SignUp = (props) => {
 
@@ -10,17 +11,34 @@ const SignUp = (props) => {
     const [password,setPassword]=useState('');
     const [name,setName]=useState('');
 
+    const {accounts,dispatch}=useContext(AuthContext);
+
+
     const handleSubmit=(e)=>{
+        console.log(accounts);
         e.preventDefault();
         let data = `Username ${username}\n
                 Email ${email}\n
                 Password ${password}\n
                 Name ${name}`;
+        
+        const account={
+            name:name,
+            email:email,
+            password:password,
+            username:username
+        }
+
+       dispatch({
+            type:signUp,
+            account:account
+        });
         setName('');
         setEmail('');
         setPassword('');
         setUsername('');
-        alert(data);
+        // alert(data);
+        console.log(accounts);
     }
 
     return ( 

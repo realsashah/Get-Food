@@ -1,6 +1,7 @@
-import React,{Component} from 'react';
+import React,{Component,useContext} from 'react';
 import {Navbar,NavbarBrand,NavItem,NavbarToggler,Collapse,Nav,Jumbotron,Button,Modal,ModalHeader,ModalBody,Form,Label,FormGroup,Input}from 'reactstrap';
 import {NavLink,Link} from 'react-router-dom';
+import {AuthContext} from '../contexts/AuthContext';
 
 class Header extends Component{
     constructor(props){
@@ -16,6 +17,8 @@ class Header extends Component{
         this.toggleModal=this.toggleModal.bind(this);
         this.handleLogin=this.handleLogin.bind(this); 
     }
+
+   
 
     toggleNav=()=>{
         this.setState({
@@ -41,6 +44,7 @@ class Header extends Component{
     }
 
     render(){
+        // const {accounts,dispatch}=useContext(AuthContext);
         return(
             <>
                 <Navbar dark expand='md'>
