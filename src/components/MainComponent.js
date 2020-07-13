@@ -5,6 +5,7 @@ import About from './Aboutcomponents';
 import Menu from './MenuComponent';
 import Cart from './CartComponent';
 import Footer from './Footercomponents';
+import SignUp from './SignUpComponent';
 import DishContextProvider from '../contexts/DishContext';
 import CartContextProvider from '../contexts/CartContext';
 import {Switch,Route,Redirect } from 'react-router-dom';
@@ -54,7 +55,12 @@ class Main extends Component{
             </CartContextProvider>
           );
         }
-          
+
+        const SignUpPage=()=>{
+          return(
+            <SignUp />
+          )
+        }
         return(
             <>
               <Header/>
@@ -68,6 +74,7 @@ class Main extends Component{
                     <Route path="/menu/:dishId" component={DishWithId} />
                     <Route path='/menu' component={MenuPage} />
                     <Route path='/cart' component={CartPage} />
+                    <Route path='/signup' component={SignUpPage} />
                 </Switch>
             </div>
               <Footer/>  

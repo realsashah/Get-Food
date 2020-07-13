@@ -30,10 +30,14 @@ class Header extends Component{
     }
 
     handleLogin(event){
-        this.toggleModal();
-        alert("Username: "+this.username.value+"\nPassword: "+this.password.value 
-                +"\nRemember: "+this.remember.checked);
         event.preventDefault();
+        this.toggleModal();
+        alert("Username: "+this.state.username+"\nPassword: "+this.state.password);
+        this.setState({
+            username:'',
+            password:''
+        });
+        
     }
 
     render(){
@@ -93,11 +97,19 @@ class Header extends Component{
                         <Form onSubmit={this.handleLogin}>
                             <FormGroup>
                                 <Label htmlFor="username">Username</Label>
-                                <Input type='text' id='username' name='username' innerRef={(input)=>this.username=input} />
+                                <Input type='text' id='username' name='username' value={this.state.username} onChange={(e)=>{
+                                    this.setState({
+                                        username:e.target.value
+                                    });
+                                }} />
                             </FormGroup>
                             <FormGroup>
                                 <Label htmlFor="password">Password</Label>
-                                <Input type='password' id='password' name='password' innerRef={(input)=>this.password=input} />
+                                <Input type='password' id='password' name='password' value={this.state.password} onChange={(e)=>{
+                                    this.setState({
+                                        password:e.target.value
+                                    });
+                                }} />
                             </FormGroup>
                             <Button type="submit" value="submit" color="primary">Login</Button>
                         </Form>    
