@@ -1,7 +1,7 @@
-import React,{Component,useContext} from 'react';
+import React,{Component} from 'react';
 import {Navbar,NavbarBrand,NavItem,NavbarToggler,Collapse,Nav,Jumbotron,Button,Modal,ModalHeader,ModalBody,Form,Label,FormGroup,Input}from 'reactstrap';
 import {NavLink,Link} from 'react-router-dom';
-import {AuthContext} from '../contexts/AuthContext';
+// import {AuthContext} from '../contexts/AuthContext';
 
 class Header extends Component{
     constructor(props){

@@ -17,10 +17,10 @@ const SignUp = (props) => {
     const handleSubmit=(e)=>{
         console.log(accounts);
         e.preventDefault();
-        let data = `Username ${username}\n
-                Email ${email}\n
-                Password ${password}\n
-                Name ${name}`;
+        // let data = `Username ${username}\n
+        //         Email ${email}\n
+        //         Password ${password}\n
+        //         Name ${name}`;
         
         const account={
             name:name,
