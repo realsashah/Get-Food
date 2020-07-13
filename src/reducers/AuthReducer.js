@@ -6,8 +6,8 @@ export const AuthReducer=(state,action)=>{
     switch(action.type){
         case signUp:
             action.account.id=uuid();
-
-            return [state.push(action.account)]
+            
+            return [...state,action.account];
         
         case checkUsername:
             return(

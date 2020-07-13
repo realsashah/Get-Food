@@ -1,3 +1,3 @@
-const loggedInAccount={};
+const loggedInAccount=[];
 
 export default loggedInAccount;
