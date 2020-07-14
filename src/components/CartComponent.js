@@ -26,12 +26,13 @@ const Cart = (props) => {
         );
     }
 
-    const {cartItems,dispatch}=useContext(CartContext);
+    let {cartItems,dispatch}=useContext(CartContext);
     const handleRemove=(dishId)=>{
         dispatch({
             type:removeFromCart,
             id:dishId
         });
+        console.log(cartItems);
         alert('Item Removed');
     }
 

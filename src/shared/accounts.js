@@ -1,3 +1,3 @@
-const Accounts=[];
+const ACCOUNTS=[];
 
-export default Accounts;
+export default ACCOUNTS;

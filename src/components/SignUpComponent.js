@@ -2,7 +2,7 @@ import React,{useState,useContext} from 'react'
 import {Form,FormGroup,Label,Input,Button,Breadcrumb,BreadcrumbItem} from 'reactstrap'
 import {Link} from 'react-router-dom';
 import {AuthContext} from '../contexts/AuthContext';
-import {signUp} from '../reducers/ActionTypes'
+import {signUp,checkUsername} from '../reducers/ActionTypes'
 
 const SignUp = (props) => {
 
@@ -31,7 +31,7 @@ const SignUp = (props) => {
 
        dispatch({
             type:signUp,
-            account:account
+            account:{...account}
         });
         setName('');
         setEmail('');
@@ -39,6 +39,14 @@ const SignUp = (props) => {
         setUsername('');
         // alert(data);
         console.log(accounts);
+    }
+
+    const checkUser=()=>{
+        console.log('Checking Username');
+        if(dispatch({type:checkUsername,username:username}))        {
+            alert(`${username} is not available`);
+            setUsername('');
+        }
     }
 
     return ( 
@@ -57,21 +65,22 @@ const SignUp = (props) => {
                     <Form onSubmit={handleSubmit}>
                         <FormGroup>
                             <Label htmlFor="name">Name</Label>
-                            <Input type='text' id='name' name='name' value={name} onChange={(e)=>setName(e.target.value)} />
+                            <Input type='text' id='name' name='name' value={name} onChange={(e)=>setName(e.target.value)} required/>
                         </FormGroup>
                         <FormGroup>
                             <Label htmlFor="username">Username</Label>
-                            <Input type='username' id='username' name='username' value={username} onChange={(e)=>setUsername(e.target.value)} />
+                            <Input type='username' id='username' name='username' value={username} onChange={(e)=>setUsername(e.target.value)} onBlur={checkUser} required />
                         </FormGroup>
                         <FormGroup>
                             <Label htmlFor="email">Email</Label>
-                            <Input type='email' id='email' name='email' value={email} onChange={(e)=>setEmail(e.target.value)} />
+                            <Input type='email' id='email' name='email' value={email} onChange={(e)=>setEmail(e.target.value)} required />
                         </FormGroup>
                         <FormGroup>
                             <Label htmlFor="password">Password</Label>
-                            <Input type='password' id='password' name='password' value={password} onChange={(e)=>setPassword(e.target.value)} />
+                            <Input type='password' id='password' name='password' value={password} onChange={(e)=>setPassword(e.target.value)} required />
                         </FormGroup>
                         <Button type="submit" value="submit" color="primary">Sign Up</Button>
+                        <Button onClick={()=>{console.log(accounts)}}>Show Accounts</Button>
                     </Form>    
             </div>
         </div>

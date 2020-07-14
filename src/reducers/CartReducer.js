@@ -1,11 +1,10 @@
 import {addIntoCart,removeFromCart} from './ActionTypes'
 
-
 export const CartReducer=(state,action)=>{
     switch(action.type){
         case addIntoCart:
             if(!state.some(dish=>dish.id===action.dish.id)){
-                
+                console.log(`state is ${state}`);
               return [state.push({
                 id: action.dish.id,
                 quantity:action.dish.quantity,
@@ -21,7 +20,8 @@ export const CartReducer=(state,action)=>{
             break;
 
         case removeFromCart:
-            return state.filter(dish=>dish.id!==action.id)
+            state=state.filter(dish=>dish.id!==action.id);
+            return state;
 
         default:
             return state;
